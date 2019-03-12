@@ -12,12 +12,23 @@
 var cadena=prompt("Ingrese una cadena");
 function convertirAmayusculas(cad){
     var totalVocales=0;
+    var vocales=["a","e","i","o","u"];
     for(let i=0;i<cad.length;i++){
-        if(cad.charAt(i)=="a" ||cad.charAt(i)=="e"||cad.charAt(i)=="i"|| cad.charAt(i)=="o"||cad.charAt(i)=="u" )
-            totalVocales++;
-        if(cad.charAt(i)=="A" ||cad.charAt(i)=="E"||cad.charAt(i)=="I"|| cad.charAt(i)=="O"||cad.charAt(i)=="U")
-            totalVocales++;
+        for(let j=0;j<cad.length;j++){
+            if(cad.charAt(i)==vocales[j])
+                totalVocales++;
+            if(cad.charAt(i)==vocales[j].toLocaleUpperCase())
+                totalVocales++;           
+        }
+        
     }
+
+    // for(let i=0;i<cad.length;i++){
+    //     if(cad.charAt(i)=="a" ||cad.charAt(i)=="e"||cad.charAt(i)=="i"|| cad.charAt(i)=="o"||cad.charAt(i)=="u" )
+    //         totalVocales++;
+    //     if(cad.charAt(i)=="A" ||cad.charAt(i)=="E"||cad.charAt(i)=="I"|| cad.charAt(i)=="O"||cad.charAt(i)=="U")
+    //         totalVocales++;
+    // }
     console.log("Total vocales => "+totalVocales);
     
 }
